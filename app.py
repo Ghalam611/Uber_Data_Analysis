@@ -24,7 +24,7 @@ app = FastAPI(title="🚕 The Future Of Taxis")
 # ======================
 # FILE PATHS
 # ======================
-DATA_CSV = "yellow_tripdata_2016-03.csv"          # عدّلي الاسم إذا مختلف
+DATA_CSV = "yellow_tripdata_2016-03.csv"          
 KMEANS_PATH = "kmeans_pickups.pkl"
 FORECAST_PATH = "demand_forecasting_best_model.pkl"
 
@@ -355,7 +355,7 @@ async def dashboard():
         )
 
         db = DBSCAN(
-            eps=0.5 / 6371,      # نفس الإعداد اللي استخدمتيه في كولاب (0.5 كم)
+            eps=0.5 / 6371,      
             min_samples=50,
             metric="haversine",
             algorithm="ball_tree",
@@ -379,7 +379,7 @@ async def dashboard():
         map_dbscan_html = fig_map_db.to_html(full_html=False, include_plotlyjs=False)
 
         # ================================
-        # 3) Trip Clusters (PCA) – نفس اللي سويناه قبل
+        # 3) Trip Clusters (PCA) 
         # ================================
         df_trip = clean_for_trip_clusters(df)
 
@@ -449,7 +449,7 @@ async def dashboard():
         trip_features_html = fig_features.to_html(full_html=False, include_plotlyjs=False)
 
         # ================================
-        # 4) نجمع الصفحة
+        
         # ================================
         content = f"""
         <div class="hero-card">
